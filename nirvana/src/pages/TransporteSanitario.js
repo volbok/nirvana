@@ -22,8 +22,8 @@ function TransporteSanitario() {
     settransportes,
   } = useContext(Context);
 
-  var html = 'http://localhost:3333/'
-
+  var html = 'https://api-nirvana-b3ffaf6a02bf.herokuapp.com/';
+  
   // carregar lista de pacientes internados.
   const loadPacientes = () => {
     axios.get(html + 'list_pacientes').then((response) => {

@@ -23,7 +23,7 @@ function Login() {
 
   // checando se o usuário inserido está registrado no sistema.
   var timeout = null;
-  var html = 'http://localhost:3333/';
+  var html = 'https://api-nirvana-b3ffaf6a02bf.herokuapp.com/';
   const checkLogin = () => {
     clearTimeout(timeout);
     timeout = setTimeout(() => {
