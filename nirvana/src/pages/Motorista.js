@@ -186,10 +186,11 @@ function Motorista() {
       return (
         <div className='scroll'
           style={{
-            width: '85vw', flexDirection: 'row', justifyContent: 'flex-start',
+            display: 'flex', flexDirection: 'row', justifyContent: 'flex-start',
             padding: 10, margin: 10, overflowX: 'auto', overflowY: 'hidden',
+            width: '80vw',
           }}>
-          {transportes.map(item => (
+          {transportes.sort((a, b) => moment(a.data_pedido) < moment(b.data_pedido) ? 1 : -1).map(item => (
             <div
               key={'empenho' + item.id}
               className={item.status == 'EM TRANSPORTE' ? 'card destaque' : 'card'}
@@ -198,8 +199,10 @@ function Motorista() {
                 justifyContent: 'space-between',
                 padding: 10,
                 margin: 10,
+                width: 'calc(80vw - 20px)',
                 backgroundColor: item.status == 'TRANSPORTE CONCLUÍDO' ? 'rgb(82, 190, 128, 1)' : item.status == 'TRANSPORTE CANCELADO' ? 'rgb(231, 76, 60, 1)' : '',
-                opacity: item.status == 'TRANSPORTE CONCLUÍDO' || item.status == 'TRANSPORTE CANCELADO' ? 0.3 : 1,
+                opacity: item.status == 'TRANSPORTE CONCLUÍDO' || item.status == 'TRANSPORTE CANCELADO' ? 0.8 : 1,
+                pointerEvents: item.status == 'TRANSPORTE CONCLUÍDO' || item.status == 'TRANSPORTE CANCELADO' ? 'none' : 'auto',
               }}>
               <div className='text1' style={{ color: '#ffffff', fontSize: 14, margin: 0 }}>
                 {'PROTOCOLO: ' + item.protocolo}
@@ -209,24 +212,24 @@ function Motorista() {
               </div>
               <div id="identificação do paciente" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <div className='text1' style={{ margin: 0 }}>
-                  {pacientes.filter(valor => valor.aih == item.aih).map(item => item.nome_paciente)}
+                  {pacientes.filter(valor => valor.aih == item.aih).slice(-1).map(item => item.nome_paciente)}
                 </div>
                 <div className='text1' style={{ margin: 0 }}>
-                  {pacientes.filter(valor => valor.aih == item.aih).map(item => 'DN: ' + moment(item.dn_paciente).format('DD/MM/YYYY'))}
+                  {pacientes.filter(valor => valor.aih == item.aih).slice(-1).map(item => 'DN: ' + moment(item.dn_paciente).format('DD/MM/YYYY'))}
                 </div>
                 <div className='text1' style={{ margin: 0 }}>
-                  {pacientes.filter(valor => valor.aih == item.aih).map(item => 'MÃE: ' + item.nome_mae)}
+                  {pacientes.filter(valor => valor.aih == item.aih).slice(-1).map(item => 'MÃE: ' + item.nome_mae)}
                 </div>
               </div>
               <div id="informações do transporte" className='scroll text1'
                 style={{
-                  whiteSpace: 'pre-wrap', justifyContent: 'flex-start',
+                  whiteSpace: 'pre-wrap', justifyContent: 'flex-start', width: '70vw', height: '70vh'
                 }}>
                 <div>
-                  {pacientes.filter(valor => valor.aih == item.aih).map(item => '## DADOS VITAIS ##\n PA: ' + item.pas + 'x' + item.pad + 'mmHg\n FC: ' + item.fc + 'bpm FR: ' + item.fr + 'irpm SAO2: ' + item.sao2 + '%')}
+                  {pacientes.filter(valor => valor.aih == item.aih).slice(-1).map(item => '## DADOS VITAIS ##\n PA: ' + item.pas + 'x' + item.pad + 'mmHg\n FC: ' + item.fc + 'bpm FR: ' + item.fr + 'irpm SAO2: ' + item.sao2 + '%')}
                 </div>
                 <div>
-                  {pacientes.filter(valor => valor.aih == item.aih).map(item => '## RESUMO DO CASO ##\n' + item.dados_susfacil)}
+                  {pacientes.filter(valor => valor.aih == item.aih).slice(-1).map(item => '## RESUMO DO CASO ##\n' + item.dados_susfacil)}
                 </div>
               </div>
               <div id="botões de ação"

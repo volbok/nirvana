@@ -20,7 +20,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import { Bar, Line, Doughnut } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 import { Chart, Filler } from 'chart.js';
 
 function Indicadores() {
@@ -48,7 +48,9 @@ function Indicadores() {
 
   Chart.register(Filler);
 
+
   // MODELOS PARA OS GRÁFICOS.
+  /*
   // gráfico em doughnut.
   const legendas = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'];
   const dados = {
@@ -77,10 +79,11 @@ function Indicadores() {
       },
     ],
   };
+  */
 
   // carregar lista de pacientes internados.
   const [pacientes, setpacientes] = useState([0, 1]);
-  const [pacientesgrafico, setpacientesgrafico] = useState([0, 1]);
+  const [setpacientesgrafico] = useState([0, 1]);
   const loadPacientes = (arraydays) => {
     axios.get(html + 'list_pacientes').then((response) => {
       var x = [0, 1];
@@ -94,6 +97,7 @@ function Indicadores() {
       getIndicadores(y);
       // funções para captura de dados para o gráfico em linha.
       setTimeout(() => {
+        // eslint-disable-next-line
         arraydays.map(item => { catchTodasAihsCadastradas(item); catchNovasAihsCadastradas(item); catchAtivasAihsCadastradas(item) });
       }, 1000);
     })

@@ -1,0 +1,54 @@
+https://drive.google.com/file/d/1neVjV5cGnsZlTUX4Utv7yVGFXVso-AGF/view?usp=drive_link
+
+Bem-vindos ao vídeo de apresentação da aplicação NIRVANA, desenhada para o gerenciamento da jornada assistencial dos pacientes
+que aguardam internação nas UPAS de belo horizonte até a chegada dos mesmos nas unidades de internação.
+
+>> TELA DO NIR:
+Uma lista exibe todos os pacientes na UPA com AIH cadastrada, com seus respectivos números de cadastro, tipo de leito, status na
+jornada assistencial e destino, quando a vaga é liberada.
+
+É possível buscar os pacientes por nome neste filtro.
+
+Ao cadastrar um paciente, devemos informar as informações relativas ao pedido de internação, incluindo número da AIH, procedimento,
+dados de identificação do paciente, sinais vitais, oferta de oxigênio e resumo do caso. Estes dados serão importantes para a validação
+do tipo de transporte e para a geração de indicadores.
+
+Estas informações estarão expostas em cada registro, ao clicarmos no paciente. Neste componente também é possível excluir o registro, quando o pedido de AIH é cancelado.
+
+Observe que, uma vez cadastrado o paciente, o campo destino estará destacado, sinalizando que o paciente está aguardando liberação de vaga pelo SUSFácil.
+
+Uma vez recebendo a confirmação de vaga pelo SUSFácil, o enfermeiro deve clicar neste botão e acionar o pedido de transporte, informando a unidade hospitalar de destino, setor, leito, nome do contato, telefone do contato e outros detalhes, tal como é feito atualmente por telefone.
+
+Dessa forma, o registro do paciente passa a ter o status de vaga liberada, sendo possível agora acionar o transporte sanitário.
+O enfermeiro deve conferir as informações registradas e confirmar os botões ao lado, que funcionam como um checklist para que não ocorram
+transportes com AIH sem carimbo, falta de exames complementares ou mesmo do relatório médico. Cada clique aqui também gera indicadores para avaliarmos os tempos de cada etapa assistencial.
+
+Em seguida, clicamos em SOLICITAR TRANSPORTE SANITÁRIO e informamos a finalidade do transporte.
+
+Observem que o status do registro agora mudou para TRANSPORTE SOLICITADO.
+
+>> TELA DO TRANSPORTE SANITÁRIO
+
+O colaborador administrativo do transporte sanitário acessa uma lista com todas as solicitações de transporte, classificados como cancelados, finalizados e solicitados. Estes últimos recebem destaque.
+
+Nesta lista são exibidos a unidade solicitante, número de protocolo, data da solicitação, finalidade do transporte, nome do paciente, unidade de destino e status do transporte.
+
+Ao clicarmos em um registro, são informados os dados vitais, oferta de oxigênio, resumo do caso e informações do transporte. Isso permite que o colaborador possa negar o empenho se o paciente está sem condições de transporte.
+
+Uma vez autorizado o transporte, devemos designar a ambulância encarregada do mesmo. Nesta tela são representadas todas as ambulâncias, com seus números de identificação, status no topo e nome do condutor. Basta isso para que a ambulância seja acionada.
+
+O botão acima permite que o gestor do transporte sanitário tenha um mapa de todas as ambulâncias disponíveis, sendo possível alterar o status de cada uma delas, facilitando assim o planejamento dos trabalhos.
+
+Por fim, apresento a versão mobile para uso do motorista da ambulância.
+
+Ao logar-se, o motorista deve informar o número da ambulância que consuzirá. Isso carregará automaticamente o histórico
+de transportes realizados pela ambulância no dia, bem como os transportes empenhados pendentes. Todas as informações sobre o paciente
+estarão disponíveis para que o motorista possa avaliar as condições de transporte.
+
+Assim que o transporte for iniciado, o motorista deve apertar o botão verde da esquerda, com o símbolo POWER, alimentando assim nosso banco com mais dados para a geração de indicadores e gerenciamento dos processos.
+
+O transporte em curso terá seu card destacado.
+
+Quando o paciente chega ao seu destino, o motorista deve tocar o botão verde da direita, finalizando assim a jornada do paciente.
+
+Na próxima etapa, desenvolveremos as telas com todos os indicadores necessários, a exemplo do que temos em planilhas do excel, sem necessidade de preenchimento manual, gerando-se assim informações confiáveis.
